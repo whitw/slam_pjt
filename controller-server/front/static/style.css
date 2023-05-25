@@ -39,15 +39,21 @@ body{
   flex-direction:row;
   justify-content:space-between;
 }
-.controller-align-ui{
-  box-sizing: border-box;
-  padding: 10px;
+.controller-align{
+  width: 25vw;
+  height: 50vw;
+  max-width: 100px;
+  max-height: 200px;
+  margin: 10px;
   display:grid;
   grid-template-rows: 1fr 1fr;
 }
 .controller-ui{
-  box-sizing: border-box;
-  padding: 10px;
+  width: 75vw;
+  height: 50vw; 
+  margin: 10px;
+  max-width: 300px;
+  max-height: 200px;
   /*margin-bottom: 50px;
   margin-right: 50px;*/
   display:grid;
@@ -55,17 +61,38 @@ body{
   grid-template-columns: 1fr 1fr 1fr;
 }
 .btn{
-  width: 100px;
-  height: 100px;
-  font-size: 50px;
+  width: 100%;
+  height: 100%;
+  max-width: 100px;
+  max-height: 100px;
+  font-size: 30px;
   color: rgb(56, 56, 56);
   -webkit-user-select: none;
   -ms-user-select: none;
   user-select: none;
 }
-.btn:hover{
-  color: blue;
-}
 .btn:active{
-  color: red;
+  border: 1px solid black;
+  border-radius: 2px;
+  background-color: #C0C0C0;
+}
+
+.btn-align{
+  grid-area: 2 / 1 / 3 / 2;
+}
+.btn-top{
+  grid-area: 1 / 2 / 2 / 3;
+}
+.btn-left{
+  grid-area: 2 / 1 / 3 / 2;
+}
+.btn-down{
+  grid-area: 2 / 2 / 3 / 3;
+}
+.btn-right{
+  grid-area: 2/ 3 / 3 / 4;
+}
+
+@media all and (min-width: 768px) {
+	.btn{font-size: 50px;}
 }

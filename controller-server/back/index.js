@@ -8,6 +8,7 @@ const config    = require('../../config/config.js');
 const env       = new config('../../config/config.txt');
 
 const backend_port = Number(env.get('BACKEND_PORT'));
+const MAX_IMG_CNT = 20;
 var imageSrc = null;
 var imageList = []
 
@@ -101,7 +102,7 @@ const messageImgHandler = (message)=>{
 	lock.acquire('file-io', (done)=>{
 		imageSrc = thisImageSrc;
 		imageList.push(imageSrc);
-		if(imageList.length >= 10){
+		if(imageList.length >= MAX_IMG_CNT){
 			imageToUnlink = imageList[0];
 			imageList.shift();
 		}
